@@ -1,0 +1,14 @@
+tunnel: 6fc28e2b-3871-43bd-af8d-81b34dfc31f5
+credentials-file: /home/acedanger/.cloudflared/6fc28e2b-3871-43bd-af8d-81b34dfc31f5.json
+
+ingress:
+  - hostname: tv.acedanger.com
+    service: http://192.168.86.39:8989
+    originRequest:
+      noTLSVerify: true
+  - hostname: movies.acedanger.com
+    service: http://192.168.86.39:7878 # radarr on local machine
+    originRequest:
+      noTLSVerify: true
+  - service: http_status:404
+logfile: /home/acedanger/.cloudflared/log/cloudflared.log
